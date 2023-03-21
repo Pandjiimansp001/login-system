@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Responsive
+@mixin mobile {
+  @media screen and (max-width: 450px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 770px) {
+    @content;
+  }
+}
+
+// Sign Up & Sign In
+.form__container {
+  height: 100vh;
+  background-color: darkslategray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    width: 30%;
+    height: 40%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    padding: 20px 10px;
+    @include mobile {
+      width: 80%;
+      height: 30%;
+    }
+    @include tablet {
+      width: 60%;
+      height: 30%;
+    }
+
+    .sign {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px 0;
+      margin: 10px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid white;
+      color: white;
+      font-size: 16px;
+
+      &::placeholder {
+        color: lightgray;
+      }
+
+      &:focus {
+        outline: none;
+        color: white;
+      }
+    }
+
+    button {
+      padding: 10px 10px;
+      margin: 15px 0;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      cursor: pointer;
+    }
+
+    .sign__info {
+      padding: 10px 0;
+      color: white;
+      @include mobile {
+        font-size: 12px;
+      }
+
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+// Home
+.home__container {
+  height: 100vh;
+  background-color: darkslategray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .home__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .home__text {
+      color: white;
+      font-size: 30px;
+      padding: 20px 0;
+    }
+
+    button {
+      padding: 10px;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
